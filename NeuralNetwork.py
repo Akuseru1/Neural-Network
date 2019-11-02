@@ -27,3 +27,20 @@ class NeuralNetwork:
         self.weights1 += d_weights1
         self.weights2 += d_weights2
 
+    def train(self, X, y):
+        self.output = self.feedforward()
+        self.backprop()
+        
+
+NN = NeuralNetwork(X,y)
+for i in range(1500): # trains the NN 1,000 times
+    if i % 100 ==0: 
+        print ("iteracion # " + str(i) + "\n")
+        print ("Entrada : \n" + str(X))
+        print ("Salida: \n" + str(y))
+        print ("Salida predecida: \n" + str(NN.feedforward()))
+        print ("perdida: \n" + str(np.mean(np.square(y - NN.feedforward())))) # mean sum squared loss
+        print ("\n")
+  
+    NN.train(X, y)
+
