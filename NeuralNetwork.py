@@ -1,4 +1,10 @@
-import numpy
+import numpy as np
+import math
+def sigmoid(t):
+    return 1/(1+np.exp(-t))
+
+def sigmoid_derivative(p):
+    return p * (1 - p)
 
 class NeuralNetwork:
     def __init__(self, x, y):
