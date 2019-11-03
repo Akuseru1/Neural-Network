@@ -3,35 +3,74 @@ import random
 
 
 class NeuralNetwork():
-    def __init__(self):
-        self.dataset = np.genfromtxt('iris2Clas.csv', delimiter=',')
+    def __init__(self, nombre_base_datos='iris2Clas.csv', n_hidden_neurons=3, eta=0.01, len_train_dataset = 0.8):
+        self.dataset = np.genfromtxt(nombre_base_datos, delimiter=',')
         self.len_dataset = len(self.dataset)
-        self.separate_dataset()
-        self.n_iteraciones = 0
-        self.n_hidden_neurons = 1
-        self.eta = 0
-        self.init_neural_network()
+        self.split_dataset(len_train_dataset)
+        self.n_hidden_neurons = n_hidden_neurons
+        self.eta = eta
+        self.syn0
+        self.syn1
+        self.init_weights()
+        self.l1
+        self.output = np.zeros(self.y.shape)
 
-    def separate_dataset(self):
-        len_train_dataset = int(self.len_dataset * 0.8)
+    def split_dataset(self, len_train_dataset):
+        len_train_dataset = int(self.len_dataset * len_train_dataset)
         train_dataset = []
         test_dataset = []
+        flower_type = self.dataset[:, -1]
+        y = []
+        y_test = []
         rows_train_dataset = random.sample(
             range(self.len_dataset), len_train_dataset)
 
         for r in range(self.len_dataset):
             if r in rows_train_dataset:
                 train_dataset.append(self.dataset[r])
+                y.append(flower_type[r])
+                
             else:
                 test_dataset.append(self.dataset[r])
+                y_test.append(flower_type[r])
         self.train_dataset = np.array(train_dataset)
         self.test_dataset = np.array(test_dataset)
-    
-    def init_neural_network(self):
+        self.y = np.array(y)
+        self.y_test = np.array(y_test)
+
+    def init_weights(self):
         # 4 because there 4 inputs
         self.syn0 = np.random.rand(4, self.n_hidden_neurons)
         # 1 because there 1 output
         self.syn1 = np.random.rand(self.n_hidden_neurons, 1)
+
+    def sigmoid(self, x, derivada=False):
+        if(derivada == True):
+            return x*(1-x)
+        return 1/(1+np.exp(-x))
+
+    def forward_propagation(self):
+        # del input al hidden
+        self.l1 = self.sigmoid(np.dot(self.train_dataset, self.syn0))
+        self.output = self.sigmoid(
+            np.dot(self.l1, self.syn1))  # del hidden al output
+
+    def backwards_propagation(self):
+        temp_syn0 = np.dot(self.l1.T,  (np.dot(2*(self.y - self.output) * self.sigmoid(
+            self.output, True), self.syn1.T) * self.sigmoid(self.l1, True)))
+        temp_syn1 = np.dot(self.l1.T, (2*(self.y - self.output)
+                                       * self.sigmoid(self.output, True)))
+
+        self.syn0 += temp_syn0
+        self.syn1 += temp_syn1
+
+    def train(self):
+        self.forward_propagation()
+        self.backwards_propagation()
+
+    def run(self, iter = 1000):
+        for i in range(iter):
+            self.train()
 
 s = NeuralNetwork()
 """
