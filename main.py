@@ -3,40 +3,30 @@ import random
 
 
 class NeuralNetwork():
-    def __init__(self, nombre_base_datos='iris2Clas.csv', n_hidden_neurons=3, eta=0.01, len_train_dataset = 0.8):
+    def __init__(self, nombre_base_datos='iris2Clas.csv', n_hidden_neurons=3, eta=0.01, len_train_dataset=0.8):
         self.dataset = np.genfromtxt(nombre_base_datos, delimiter=',')
+        self.len_train_dataset = len_train_dataset
         self.len_dataset = len(self.dataset)
-        self.split_dataset(len_train_dataset)
+        self.split_dataset()
         self.n_hidden_neurons = n_hidden_neurons
         self.eta = eta
-        self.syn0
-        self.syn1
         self.init_weights()
-        self.l1
-        self.output = np.zeros(self.y.shape)
 
-    def split_dataset(self, len_train_dataset):
-        len_train_dataset = int(self.len_dataset * len_train_dataset)
+    def split_dataset(self):
+        len_train_dataset = int(self.len_dataset * self.len_train_dataset)
         train_dataset = []
         test_dataset = []
-        flower_type = self.dataset[:, -1]
-        y = []
-        y_test = []
         rows_train_dataset = random.sample(
             range(self.len_dataset), len_train_dataset)
 
         for r in range(self.len_dataset):
             if r in rows_train_dataset:
                 train_dataset.append(self.dataset[r])
-                y.append(flower_type[r])
-                
+
             else:
                 test_dataset.append(self.dataset[r])
-                y_test.append(flower_type[r])
         self.train_dataset = np.array(train_dataset)
         self.test_dataset = np.array(test_dataset)
-        self.y = np.array(y)
-        self.y_test = np.array(y_test)
 
     def init_weights(self):
         # 4 because there 4 inputs
@@ -45,34 +35,59 @@ class NeuralNetwork():
         self.syn1 = np.random.rand(self.n_hidden_neurons, 1)
 
     def sigmoid(self, x, derivada=False):
+        layer = []
         if(derivada == True):
-            return x*(1-x)
-        return 1/(1+np.exp(-x))
+            for i in x:
+                layer.append(i*(1-i))
+            return layer
+        for i in x:
+            layer.append(1/(1+np.exp(-i)))
+        return layer
 
     def forward_propagation(self):
         # del input al hidden
-        self.l1 = self.sigmoid(np.dot(self.train_dataset, self.syn0))
-        self.output = self.sigmoid(
-            np.dot(self.l1, self.syn1))  # del hidden al output
+        self.l1 = self.sigmoid(
+            np.matmul(self.train_dataset[:, :-1], self.syn0))
+        self.output = self.sigmoid(np.matmul(self.l1, self.syn1))
 
     def backwards_propagation(self):
-        temp_syn0 = np.dot(self.l1.T,  (np.dot(2*(self.y - self.output) * self.sigmoid(
-            self.output, True), self.syn1.T) * self.sigmoid(self.l1, True)))
-        temp_syn1 = np.dot(self.l1.T, (2*(self.y - self.output)
-                                       * self.sigmoid(self.output, True)))
+        # error queda con los errores del 80%
+        self.error1 = [ i - j for (i, j) in zip(self.train_dataset[:, -1], self.output)]
+        self.error0 = [i - j for (i, j) in zip(self.train_dataset[:, -1], self.l1)]
+        derivadas1 = self.sigmoid(self.output, True)
+        derivadas0 = self.sigmoid(self.l1, True)
+        output_delta = [i * j * self.eta for (i, j) in zip(self.error1, derivadas1)]
+        l1_delta = [i * j * self.eta for (i, j) in zip(self.error0, derivadas0)]
 
-        self.syn0 += temp_syn0
-        self.syn1 += temp_syn1
+        self.syn0 += np.matmul(self.train_dataset[:, :-1].T, l1_delta)
+        self.syn1 += np.matmul(self.train_dataset[:, :-1].T, output_delta)
 
     def train(self):
         self.forward_propagation()
         self.backwards_propagation()
 
-    def run(self, iter = 1000):
+    def run(self, iter=1000):
+        primera_vez = True
+        print("Pesos hacia hidden: ", self.syn0)
+        print("Pesos hacia output: ", self.syn0)
         for i in range(iter):
             self.train()
+            print("Iteracion: ", iter)
+            print("Error0: ", self.error0)
+            print("Error1: ", self.error1)
+            if(primera_vez):
+                error0_inicial = self.error0
+                error1_inicial = self.error1
+        print("Pesos hacia hidden: ", self.syn0)
+        print("Pesos hacia output: ", self.syn0)
+        print("Error0 inicial: ", error0_inicial)
+        print("Error1 inicial: ", error1_inicial)
+        print("Error0 final: ", self.error0)
+        print("Error1 final: ", self.error1)
+
 
 s = NeuralNetwork()
+s.run()
 """
 # sigmoid function
 def nonlin(x, deriv=False):
