@@ -3,8 +3,7 @@ import random
 import matplotlib.pyplot as plt
 
 class NeuralNetwork():
-
-    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=3, eta=0.35, iter=15000, percentage_train_dataset=0.8, id_activate_function=1):
+    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=1, eta=0.35, iter=15000, percentage_train_dataset=0.8, id_activate_function=1):
         self.dataset = np.genfromtxt(dataset_name, delimiter=',')
         self.dataset = self.dataset[1:]
         self.len_dataset = len(self.dataset)
@@ -12,6 +11,7 @@ class NeuralNetwork():
         self.split_dataset()
         self.n_hidden_neurons = n_hidden_neurons
         self.eta = eta
+        self.itera=iter
         self.layers = []
         self.activation_functions = [
             {
@@ -65,17 +65,18 @@ class NeuralNetwork():
         np.random.seed(2)
         # 4 because there 4 inputs
         self.syn0 = np.random.rand(4, self.n_hidden_neurons)
-        # 1 because there 1 input
+        # 1 because there 1 output
         self.syn1 = np.random.rand(self.n_hidden_neurons, 1)
         
 
     def train(self):
-        errores_promedio = []        
+        error_promedio = []        
+        error_promedio_test = []        
         epoca = []
-        for iter in range(itera):
+        for iter in range(self.itera):
             input_data = self.train_dataset
             neta1 = np.dot(input_data, self.syn0)
-            print(f'Netas Intermedias: \n, { neta1 }')
+            print(f'Netas Intermedias: \n, {neta1 }')
             l1 = self.activate_function['fn'](neta1)
             print(f'Salidas Intermedias: \n { l1 }')
 
@@ -88,11 +89,11 @@ class NeuralNetwork():
             # how much did we miss the target value?
             l2_error = self.y_train_dataset - l2
             # ENTRENAMIENTO
-            errores_promedio.append(np.mean(np.abs(l2_error)))
+            error_promedio.append(np.mean(np.abs(l2_error)))
             epoca.append(iter)
             if (iter % 10000) == 0:
                 print(
-                    f'Error Promedio Absoluto: {str(errores_promedio[-1])}')
+                    f'Error Promedio Absoluto: {str(error_promedio[-1])}')
 
             # in what direction is the target value?
             # were we really sure? if so, don't change too much.
@@ -113,18 +114,37 @@ class NeuralNetwork():
             # were we really sure? if so, don't change too much.
             l1_delta = l1_error * self.activate_function['dfn'](l1)*self.eta
             print(f'l1_delta: \n {l1_delta} \n')
+
+            # datos de TEST
+            neta_test = np.dot(self.test_dataset, self.syn0)
+            activate_neta_test = self.activate_function['fn'](neta_test)
+            neta2_test = np.dot(activate_neta_test, self.syn1)
+            output_test = self.activate_function['fn'](neta2_test)
+            error_test = self.y_test_dataset - output_test
+            error_promedio_test.append(np.mean(np.abs(error_test)))
             # update weights
             self.syn1 += l1.T.dot(l2_delta)
             self.syn0 += input_data.T.dot(l1_delta)
 
-        print('\n', 'Output After Training:')
-        print('Salida red:', '\n', l2)
-        print('Error:' + str(np.mean(np.abs(l2_error))))
-        print('\n', 'pesos salida', '\n', self.syn1, '\n')
-        print('\n', 'pesos entrada', '\n', self.syn0)
-        plt.plot(epoca, errores_promedio, label="Error promedio")
+        print('\n Output After Training:')
+        print(f'Salida red: \n, {l2}')
+        print(
+            f'Promedio de error con el dataset de entrenamiento: {str(np.mean(np.abs(l2_error)))} \n')
+        print(f'pesos salida  \n {self.syn1} \n')
+        print(f'pesos entrada \n  {self.syn0} \n')
+        print(f'Salida para test dataset: {output_test}')
+        print(f'Y real para test dataset: {self.y_test_dataset}')
+        print(
+            f'Promedio de error con el dataset de prueba {str(error_promedio_test[-1])}')
+
+        plt.xlabel("Iteraciones")
+        plt.ylabel("Error promedio")
+        plt.plot(epoca, error_promedio, label="Trained")
+        plt.plot(epoca, error_promedio_test, label="Test")
+        plt.legend(loc='upper right')
         # Con formateo
         # print "%5d%10s" %(1,'a')
+        plt.show()
 
 def read_parameters():
     db = ""
@@ -143,3 +163,4 @@ def read_parameters():
 db, eta, itera = read_parameters()
 s = NeuralNetwork(dataset_name=db, eta=eta, iter=itera)
 s.train()
+
