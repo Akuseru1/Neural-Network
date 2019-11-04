@@ -155,8 +155,12 @@ def read_parameters():
         db = 'iris2Clas.csv'
     if(eta == ""):
         eta = 0.35 
+    else:
+        eta = float(eta)
     if(iteraciones == ""):
         iteraciones = 1500
+    else:
+        iteraciones = int(iteraciones)
     return db, eta, iteraciones
 
 
