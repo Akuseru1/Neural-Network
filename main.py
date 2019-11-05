@@ -152,20 +152,20 @@ def read_parameters():
     n_neurons = input(
         'Ingrese el número de neuronas en la capa oculta (default: 3)')
 
-    if(not db.strip()):
+    if not db.strip():
         db = 'iris2Clas.csv'
 
-    if(not eta.strip()):
+    if not eta.strip():
         eta = 0.35
     else:
         eta = float(eta)
 
-    if (not n_neurons.strip()):
+    if not n_neurons.strip():
         n_neurons = 3
     else:
         n_neurons = int(n_neurons)
 
-    if(not iteraciones.strip()):
+    if not iteraciones.strip():
         iteraciones = 1500
     else:
         iteraciones = int(iteraciones)
