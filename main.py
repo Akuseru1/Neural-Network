@@ -2,8 +2,9 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+
 class NeuralNetwork():
-    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=1, eta=0.35, iter=15000, percentage_train_dataset=0.8, id_activate_function=1):
+    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=1, eta=0.35, itera=15000, percentage_train_dataset=0.8, id_activate_function=1):
         self.dataset = np.genfromtxt(dataset_name, delimiter=',')
         self.dataset = self.dataset[1:]
         self.len_dataset = len(self.dataset)
@@ -11,7 +12,7 @@ class NeuralNetwork():
         self.split_dataset()
         self.n_hidden_neurons = n_hidden_neurons
         self.eta = eta
-        self.itera=iter
+        self.itera = itera
         self.layers = []
         self.activation_functions = [
             {
@@ -67,13 +68,12 @@ class NeuralNetwork():
         self.syn0 = np.random.rand(4, self.n_hidden_neurons)
         # 1 because there 1 output
         self.syn1 = np.random.rand(self.n_hidden_neurons, 1)
-        
 
     def train(self):
-        error_promedio = []        
-        error_promedio_test = []        
+        error_promedio = []
+        error_promedio_test = []
         epoca = []
-        for iter in range(self.itera):
+        for itera in range(self.itera):
             input_data = self.train_dataset
             neta1 = np.dot(input_data, self.syn0)
             print(f'Netas Intermedias: \n, {neta1 }')
@@ -90,8 +90,8 @@ class NeuralNetwork():
             l2_error = self.y_train_dataset - l2
             # ENTRENAMIENTO
             error_promedio.append(np.mean(np.abs(l2_error)))
-            epoca.append(iter)
-            if (iter % 10000) == 0:
+            epoca.append(itera)
+            if (itera % 10000) == 0:
                 print(
                     f'Error Promedio Absoluto: {str(error_promedio[-1])}')
 
@@ -137,34 +137,43 @@ class NeuralNetwork():
         print(
             f'Promedio de error con el dataset de prueba {str(error_promedio_test[-1])}')
 
-        plt.xlabel("Iteraciones")
-        plt.ylabel("Error promedio")
-        plt.plot(epoca, error_promedio, label="Trained")
-        plt.plot(epoca, error_promedio_test, label="Test")
+        plt.xlabel('Iteraciones')
+        plt.ylabel('Error promedio')
+        plt.plot(epoca, error_promedio, label='Trained')
+        plt.plot(epoca, error_promedio_test, label='Test')
         plt.legend(loc='upper right')
-        # Con formateo
-        # print "%5d%10s" %(1,'a')
         plt.show()
 
+
 def read_parameters():
-    db = ""
-    db = input("ingrese el nombre de la base de datos (default: iris2Clas.csv)")
-    eta = input("Ingrese el valor del del eta (default: 0.35)")
-    iteraciones = input("Ingrese el numero de iteraciones (default: 15000)")
-    if(db== ""):
+    db = input('ingrese el nombre de la base de datos (default: iris2Clas.csv)')
+    eta = input('Ingrese el valor del del eta (default: 0.35)')
+    iteraciones = input('Ingrese el número de iteraciones (default: 15000)')
+    n_neurons = input(
+        'Ingrese el número de neuronas en la capa oculta (default: 3)')
+
+    if(not db.stirp()):
         db = 'iris2Clas.csv'
-    if(eta == ""):
-        eta = 0.35 
+
+    if(not eta.strip()):
+        eta = 0.35
     else:
         eta = float(eta)
-    if(iteraciones == ""):
+
+    if (not n_neurons.strip()):
+        n_neurons = 3
+    else:
+        n_neurons = int(n_neurons)
+
+    if(not iteraciones.strip()):
         iteraciones = 1500
     else:
         iteraciones = int(iteraciones)
-    return db, eta, iteraciones
+
+    return db, eta, iteraciones, n_neurons
 
 
-db, eta, itera = read_parameters()
-s = NeuralNetwork(dataset_name=db, eta=eta, iter=itera)
+db, eta, itera, n_neurons = read_parameters()
+s = NeuralNetwork(dataset_name=db, eta=eta, itera=itera,
+                  n_hidden_neurons=n_neurons)
 s.train()
-
