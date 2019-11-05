@@ -152,7 +152,7 @@ def read_parameters():
     n_neurons = input(
         'Ingrese el número de neuronas en la capa oculta (default: 3)')
 
-    if(not db.stirp()):
+    if(not db.strip()):
         db = 'iris2Clas.csv'
 
     if(not eta.strip()):
