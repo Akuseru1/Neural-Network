@@ -76,6 +76,9 @@ INPUT ./img/3hn.png
 INPUT ./img/3hn.png
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/./img/result_3hn.png
+INPUT ./img/result_3hn.png
+INPUT ./img/result_3hn.png
 INPUT /home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

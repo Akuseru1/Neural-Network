@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.11.5)  5 NOV 2019 17:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.11.5)  5 NOV 2019 17:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -148,20 +148,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./img/1hn.png>] [3 <./img/2hn.png> <./img/3hn.png>] (/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <./img/result_3hn.png, id=14, 987.2082pt x 491.436pt>
+File: ./img/result_3hn.png Graphic file (type png)
+ <use ./img/result_3hn.png>
+Package pdftex.def Info: ./img/result_3hn.png used on input line 53.
+(pdftex.def)             Requested size: 284.52061pt x 227.62303pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./img/1hn.png>] [3 <./img/2hn.png> <./img/3hn.png>] [4 <./img/result_3hn.png>] (/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux) ) 
 Here is how much of TeX's memory you used:
- 1517 strings out of 494945
- 22578 string characters out of 6181032
- 76890 words of memory out of 5000000
- 4816 multiletter control sequences out of 15000+600000
+ 1523 strings out of 494945
+ 22703 string characters out of 6181032
+ 76898 words of memory out of 5000000
+ 4821 multiletter control sequences out of 15000+600000
  8195 words of font info for 29 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,7n,25p,355b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf" (3 pages, 163412 bytes).
+Output written on "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf" (4 pages, 186085 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

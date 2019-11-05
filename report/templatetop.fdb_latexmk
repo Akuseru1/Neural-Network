@@ -1,11 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1572991282 "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex" "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf" "templatetop" 1572991282
+["pdflatex"] 1572992814 "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex" "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf" "templatetop" 1572992940
   "./img/1hn.png" 1572967668 33616 e4d92cdeed9e6dbd554a4cc5910bff17 ""
   "./img/2hn.png" 1572967853 43801 c1ec276f05866de435e548e6d0373a7d ""
   "./img/3hn.png" 1572968022 52303 c8051aeaae6e3330e1746052f2308b67 ""
+  "./img/result_3hn.png" 1572992267 24206 a223905e20b3b48a223963a7794730e7 ""
   "/etc/texmf/web2c/texmf.cnf" 1572986534 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux" 1572991282 1222 014d0b76995ffa1cc0f19f6b15fea8eb ""
-  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex" 1572991281 2631 b71906f1f3fc3b63ffc8c9545a8bbf93 ""
+  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux" 1572992814 1375 bb91c2be52192c4d1ac91fde0b4fdf05 ""
+  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex" 1572992939 3073 6cf2642021bc121872b7698c4bb7a830 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -52,11 +53,12 @@
   "img/1hn.png" 1572967668 33616 e4d92cdeed9e6dbd554a4cc5910bff17 ""
   "img/2hn.png" 1572967853 43801 c1ec276f05866de435e548e6d0373a7d ""
   "img/3hn.png" 1572968022 52303 c8051aeaae6e3330e1746052f2308b67 ""
-  "templatetop.aux" 1572991282 1222 014d0b76995ffa1cc0f19f6b15fea8eb ""
-  "templatetop.tex" 1572991281 2631 b71906f1f3fc3b63ffc8c9545a8bbf93 ""
+  "img/result_3hn.png" 1572992267 24206 a223905e20b3b48a223963a7794730e7 ""
+  "templatetop.aux" 1572992814 1375 bb91c2be52192c4d1ac91fde0b4fdf05 ""
+  "templatetop.tex" 1572992939 3073 6cf2642021bc121872b7698c4bb7a830 ""
   (generated)
-  "templatetop.log"
   "templatetop.aux"
-  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf"
-  "templatetop.pdf"
   "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.log"
+  "templatetop.log"
+  "templatetop.pdf"
+  "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf"

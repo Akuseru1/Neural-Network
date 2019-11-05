@@ -39,12 +39,20 @@ posee 1 2 \'o 3 neuronas y finalmente, una capa de salida que esta compuesta de 
 De manera aleatoria se escoge  el 80\% del dataset para entrenar la red neuronal y el porcentaje
 restante es usado para evaluar los resultados obtenidos una vez hecho el entrenamiento.
 El entrenamiento se realiz\'o con cada uno de los dise\~nos mostrados en \ref{1hn}, \ref{2hn} y \ref{3hn}.
-Como par\'ametros de entrada para el proceso de entrenamiento se toma el eta o taza de aprendizaje, el n\'umero de epocas a alcanzar y la funci\'on de activaci\'on.
+Como par\'ametros de entrada para el proceso de entrenamiento se toma el eta o taza de aprendizaje, el n\'umero de \'epocas a alcanzar y la funci\'on de activaci\'on.
 Los pesos al inicio del proceso de entrenamiento son generados de manera aleatoria. Las funciones de activaci\'on disponibles son...
 \subsubsection{Entrenamiento con una neurona en la capa oculta}
 Con eta=4.5 y hasta alcanzar la \'epoca 1000 se obtuvo:
 \subsubsection{Entrenamiento con dos neuronas en la capa oculta}
 Con eta=4.5 y hasta alcanzar la \'epoca 1000 se obtuvo:
 \subsubsection{Entrenamiento con tres neuronas en la capa oculta}
-Con eta=4.5 y hasta alcanzar la \'epoca 1000 se obtuvo:
+Los resultados obtenidos bajo esta arquitectura usando eta=3.5 y funci\'on de activaci\'on sigmoide
+hasta alcanzar la \'epoca 15000 se observan en \ref{result_3hn}. Se puede observar como el error promedio con los datos de entrenamiento y de prueba
+se reduce constantemente hasta alcanzar el valor de 0.0014.
+\begin{figure}[h]
+    \includegraphics[width=10cm, height=8cm]{result_3hn}
+    \centering
+    \caption{Entrenamiento con 3 neuronas en la capa oculta}
+    \label{result_3hn}
+\end{figure}
 \end{document}

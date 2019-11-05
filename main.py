@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 class NeuralNetwork():
-    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=1, eta=0.35, itera=15000, percentage_train_dataset=0.8, id_activate_function=1):
+    def __init__(self, dataset_name='iris2Clas.csv', n_hidden_neurons=3, eta=0.35, itera=15000, percentage_train_dataset=0.8, id_activate_function=1):
         self.dataset = np.genfromtxt(dataset_name, delimiter=',')
         self.dataset = self.dataset[1:]
         self.len_dataset = len(self.dataset)
@@ -166,7 +166,7 @@ def read_parameters():
         n_neurons = int(n_neurons)
 
     if not iteraciones.strip():
-        iteraciones = 1500
+        iteraciones = 15000
     else:
         iteraciones = int(iteraciones)
 
