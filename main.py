@@ -13,7 +13,6 @@ class NeuralNetwork():
         self.n_hidden_neurons = n_hidden_neurons
         self.eta = eta
         self.itera = itera
-        self.layers = []
         self.activation_functions = [
             {
                 'fn': lambda x: x,
@@ -146,14 +145,14 @@ class NeuralNetwork():
 
 
 def read_parameters():
-    db = input('ingrese el nombre de la base de datos (default: iris2Clas.csv)')
+    dt = input('ingrese el nombre del dataset (default: iris2Clas.csv)')
     eta = input('Ingrese el valor del del eta (default: 0.35)')
     iteraciones = input('Ingrese el número de iteraciones (default: 15000)')
     n_neurons = input(
         'Ingrese el número de neuronas en la capa oculta (default: 3)')
 
-    if not db.strip():
-        db = 'iris2Clas.csv'
+    if not dt.strip():
+        dt = 'iris2Clas.csv'
 
     if not eta.strip():
         eta = 0.35
@@ -170,10 +169,10 @@ def read_parameters():
     else:
         iteraciones = int(iteraciones)
 
-    return db, eta, iteraciones, n_neurons
+    return dt, eta, iteraciones, n_neurons
 
 
-db, eta, itera, n_neurons = read_parameters()
-s = NeuralNetwork(dataset_name=db, eta=eta, itera=itera,
+dt, eta, itera, n_neurons = read_parameters()
+s = NeuralNetwork(dataset_name=dt, eta=eta, itera=itera,
                   n_hidden_neurons=n_neurons)
 s.train()
