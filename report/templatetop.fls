@@ -10,8 +10,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
@@ -79,8 +77,8 @@ INPUT ./img/2hn.png
 INPUT /home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/./img/3hn.png
 INPUT ./img/3hn.png
 INPUT ./img/3hn.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/./img/result_3hn.png
 INPUT ./img/result_3hn.png
 INPUT ./img/result_3hn.png
