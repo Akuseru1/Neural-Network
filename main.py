@@ -64,9 +64,9 @@ class NeuralNetwork():
     def init_weights(self):
         np.random.seed(2)
         # 4 because there 4 inputs
-        self.syn0 = np.random.rand(4, self.n_hidden_neurons)
+        self.syn0 = 2 * np.random.rand(4, self.n_hidden_neurons) - 1
         # 1 because there 1 output
-        self.syn1 = np.random.rand(self.n_hidden_neurons, 1)
+        self.syn1 = 2 * np.random.rand(self.n_hidden_neurons, 1) - 1
 
     def train(self):
         error_promedio = []
