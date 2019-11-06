@@ -16,23 +16,13 @@ class NeuralNetwork():
         self.activation_functions = [
             {
                 'fn': lambda x: x,
-                'dfn': lambda _: 1
+                'dfn': lambda x: np.ones((len(x),1))  
             },
 
             {
                 'fn': lambda x: 1/(1 + np.exp(-x)),
                 'dfn': lambda x: x*(1 - x)
             },
-
-            {
-                'fn': lambda x: 2/(1 + np.exp(-x)) - 1,
-                'dfn': lambda x: 2*np.exp(-x)/((1 + np.exp(-x)) ^ 2)
-            },
-
-            {
-                'fn': lambda x: 1 if x >= 0 else 0,
-                'dfn': lambda _: 0
-            }
         ]
         self.activate_function = self.activation_functions[id_activate_function]
         self.init_weights()
@@ -80,6 +70,7 @@ class NeuralNetwork():
             print(f'Salidas Intermedias: \n { l1 }')
 
             neta2 = np.dot(l1, self.syn1)
+
             print(f'Netas Salidas: \n { neta2 }')
             l2 = self.activate_function['fn'](neta2)
             print(f'Salida red: \n { l2 }')
@@ -100,7 +91,6 @@ class NeuralNetwork():
             # NO multiply how much we missed by the
             # NO slope of the sigmoid at the values in l1
             l2_delta = l2_error * self.activate_function['dfn'](l2)*self.eta
-
             print(f'l2_delta: \n {l2_delta} \n')
 
             # how much did each l1 value contribute to the l2 error
@@ -112,7 +102,9 @@ class NeuralNetwork():
             # in what direction is the target l1?
             # were we really sure? if so, don't change too much.
             l1_delta = l1_error * self.activate_function['dfn'](l1)*self.eta
+
             print(f'l1_delta: \n {l1_delta} \n')
+            print(f'l1_error: \n {l1_error} \n')
 
             # datos de TEST
             neta_test = np.dot(self.test_dataset, self.syn0)
@@ -124,6 +116,7 @@ class NeuralNetwork():
             # update weights
             self.syn1 += l1.T.dot(l2_delta)
             self.syn0 += input_data.T.dot(l1_delta)
+
 
         print('\n Output After Training:')
         print(f'Salida red: \n, {l2}')
@@ -150,7 +143,7 @@ def read_parameters():
     iteraciones = input('Ingrese el número de iteraciones (default: 15000)')
     n_neurons = input(
         'Ingrese el número de neuronas en la capa oculta (default: 3)')
-    print('Ingrese la funcion que desea utilizar \n 1:Lineal \n 2:Sigmoide \n 3: Umbral \n 4: Lineal a trozos')
+    print('Ingrese la funcion que desea utilizar \n 0:Lineal \n 1:Sigmoide')
     funcion = input('(default Sigmoide)')
 
     if not dt.strip():
@@ -173,6 +166,8 @@ def read_parameters():
 
     if not funcion.strip():
         funcion = 1
+    else:
+        funcion = int(funcion)
 
 
     return dt, eta, iteraciones, n_neurons, funcion
