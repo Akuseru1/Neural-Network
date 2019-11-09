@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import random
 import matplotlib.pyplot as plt
 
@@ -58,14 +59,31 @@ class NeuralNetwork():
         # 1 because there 1 output
         self.syn1 = 2 * np.random.rand(self.n_hidden_neurons, 1) - 1
 
+    def normalization(self, dataset):
+        minimum_values = []
+        maximum_values = []
+        normalized = []
+        for i in range(len(dataset[0])):
+            minimum_values.append(min(dataset[:,i])) # saca el minimo de todos los datos de cada columna
+            maximum_values.append(max(dataset[:,i]))
+
+        n = lambda x: [ (x[y] - minimum_values[y]) / (maximum_values[y] - minimum_values[y]) for y in range(len(x))] # funcion min-max
+        log = lambda x: [math.log(x[i]) for i in range(len(x)) if x[i] > 0]
+        
+        for i in range(len(dataset)):
+            # normalized.append(log(dataset[i]))
+            normalized.append(n(dataset[i])) #probado con eta 0.001
+        normalized = np.array(normalized)
+        return normalized
+
     def train(self):
         error_promedio = []
         error_promedio_test = []
         epoca = []
+        input_data = self.normalization(self.train_dataset)
         for itera in range(self.itera):
-            input_data = self.train_dataset
             neta1 = np.dot(input_data, self.syn0)
-            print(f'Netas Intermedias: \n, {neta1 }')
+            # print(f'Netas Intermedias: \n, {neta1 }')
             l1 = self.activate_function['fn'](neta1)
             print(f'Salidas Intermedias: \n { l1 }')
 
@@ -114,8 +132,13 @@ class NeuralNetwork():
             error_test = self.y_test_dataset - output_test
             error_promedio_test.append(np.mean(np.abs(error_test)))
             # update weights
+            print(f' weights 0 before: \n { self.syn0 }')
+            print(f' weight 1 before : \n { self.syn1 }')
             self.syn1 += l1.T.dot(l2_delta)
             self.syn0 += input_data.T.dot(l1_delta)
+            print(f' weights 0 after: \n { self.syn0 }')
+            print(f' weight 1 after : \n { self.syn1 }')
+
 
 
         print('\n Output After Training:')
