@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.11.5)  10 NOV 2019 21:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.11.11)  11 NOV 2019 10:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **"/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex"
 (/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex
 LaTeX2e <2017/01/01> patch level 3
-Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -69,28 +69,172 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen111
 \Gm@layoutvoffset=\dimen112
 \Gm@dimlist=\toks15
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count91
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+) (/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux)
+\openout1 = `templatetop.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count92
+\scratchdimen=\dimen113
+\scratchbox=\box28
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen114
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
 )
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+)) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=542.02501pt
+* \textheight=722.7pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-! LaTeX Error: File `float.sty' not found.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 12.
+<./img/dt_example.png, id=1, 738.76pt x 141.52875pt>
+File: ./img/dt_example.png Graphic file (type png)
+ <use ./img/dt_example.png>
+Package pdftex.def Info: ./img/dt_example.png used on input line 20.
+(pdftex.def)             Requested size: 369.88635pt x 199.18626pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 28.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ­ in font cmr10!
+ <./img/1hn.png, id=3, 719.68875pt x 452.69125pt>
+File: ./img/1hn.png Graphic file (type png)
+ <use ./img/1hn.png>
+Package pdftex.def Info: ./img/1hn.png used on input line 40.
+(pdftex.def)             Requested size: 284.53201pt x 227.62296pt.
+ [1
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
-/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex:5: Emergency stop.
-<read *> 
-         
-l.5 \graphicspath
-                 { {./img/} }^^M
-*** (cannot \read from terminal in nonstop modes)
-
- 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/dt_example.png>] <./img/2hn.png, id=18, 719.68875pt x 452.69125pt>
+File: ./img/2hn.png Graphic file (type png)
+ <use ./img/2hn.png>
+Package pdftex.def Info: ./img/2hn.png used on input line 47.
+(pdftex.def)             Requested size: 284.53201pt x 227.62296pt.
+ <./img/3hn.png, id=19, 719.68875pt x 452.69125pt>
+File: ./img/3hn.png Graphic file (type png)
+ <use ./img/3hn.png>
+Package pdftex.def Info: ./img/3hn.png used on input line 53.
+(pdftex.def)             Requested size: 284.53201pt x 227.62296pt.
+ [2 <./img/1hn.png> <./img/2hn.png>] <./img/result_1hn.png, id=25, 464.6961pt x 445.9059pt>
+File: ./img/result_1hn.png Graphic file (type png)
+ <use ./img/result_1hn.png>
+Package pdftex.def Info: ./img/result_1hn.png used on input line 67.
+(pdftex.def)             Requested size: 284.5278pt x 227.62672pt.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¡ in font cmr10!
+ <./img/result_2hn.png, id=26, 464.6961pt x 445.9059pt>
+File: ./img/result_2hn.png Graphic file (type png)
+ <use ./img/result_2hn.png>
+Package pdftex.def Info: ./img/result_2hn.png used on input line 75.
+(pdftex.def)             Requested size: 284.5278pt x 227.62672pt.
+ [3 <./img/3hn.png> <./img/result_1hn.png>] <./img/result_3hn.png, id=33, 987.2082pt x 491.436pt>
+File: ./img/result_3hn.png Graphic file (type png)
+ <use ./img/result_3hn.png>
+Package pdftex.def Info: ./img/result_3hn.png used on input line 85.
+(pdftex.def)             Requested size: 284.52061pt x 227.62303pt.
+ [4 <./img/result_2hn.png> <./img/result_3hn.png>] (/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.aux) ) 
 Here is how much of TeX's memory you used:
- 1297 strings out of 494945
- 18205 string characters out of 6181032
- 72904 words of memory out of 5000000
- 4640 multiletter control sequences out of 15000+600000
- 3940 words of font info for 15 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 27i,0n,32p,365b,36s stack positions out of 5000i,500n,10000p,200000b,80000s
-/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.tex:5:  ==> Fatal error occurred, no output PDF file produced!
+ 2084 strings out of 493013
+ 30979 string characters out of 6135681
+ 97830 words of memory out of 5000000
+ 5613 multiletter control sequences out of 15000+600000
+ 8811 words of font info for 31 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,7n,32p,460b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "/home/ar4z/Documents/University/2019-II/SistemasInteligentes/Redes Neuronales/iris/Neural-Network/report/templatetop.pdf" (4 pages, 273556 bytes).
+PDF statistics:
+ 68 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

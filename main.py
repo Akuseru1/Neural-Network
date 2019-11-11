@@ -35,7 +35,7 @@ class NeuralNetwork():
                 'dfn': lambda x: np.zeros((len(x), 1))
             }
         ]
-        self.activate_function = self.activation_functions[3]
+        self.activate_function = self.activation_functions[id_activate_function]
         self.init_weights()
 
     def split_dataset(self):
@@ -169,7 +169,7 @@ class NeuralNetwork():
 
 def read_parameters():
     dt = input('Ingrese el nombre del dataset (default: iris2Clas.csv)')
-    function_id = input('Ingrese la función que desea utilizar \n 0:Identidad \n 1:Sigmoide \n 2: \n 3: (default Sigmoide)')
+    function_id = input('Ingrese la función que desea utilizar \n 0: Identidad \n 1: Sigmoide \n 2: Umbral\n 3: Lineal a trozos (default Sigmoide)')
     eta = input('Ingrese el valor del del eta (default: 0.001 para función identidad, 0.35 en otro caso)')
     iteraciones = input('Ingrese el número de épocas (default: 15000)')
     n_neurons = input('Ingrese el número de neuronas en la capa oculta (default: 3)')
@@ -187,8 +187,8 @@ def read_parameters():
         eta = 0.35 if function_id else 0.001
     else:
         eta = float(eta)
-        if not function_id and eta > 0.001:
-            print("ETA demasiado alto para usar la función identidad como función de activación, esto llevará a nan")
+        if not function_id and eta >= 0.001:
+            print("ETA demasiado alto para usar la función identidad como función de activación, esto llevará a valores NAN")
 
     if not n_neurons.strip():
         n_neurons = 3

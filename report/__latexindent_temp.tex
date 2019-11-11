@@ -16,22 +16,14 @@ En el presente trabajo se describe el proceso llevado a cabo para entrenar una r
 \subsection{Descripci\'on del dataset}
 El dataset con el que se realiza el entrenamiento de la red neuronal se compone de 100 registros o muestras,
 cada uno de ellos con la medida de longitud y ancho de p\'etalos y s\'epalos adem\'as de su respectiva clasificaci\'on.
+\subsection{Normalizaci\'on}
+Antes de realizar el proceso de 
 \begin{figure}[H]
     \includegraphics[width=13cm, height=7cm]{dt_example}
     \centering
     \caption{Estructura y registros del dataset}
     \label{fig:dt_example}
 \end{figure}
-\subsection{Normalizaci\'on}
-Antes de realizar el proceso de entrenamiento se opt\'o por normalizar los datos con los cuales va a ser entrenada y evaluada la red neuronal.
-Este proceso se hizo mediante el m\'etodo conocido como Min-Max descrito en la Formula 1:
-\[v'_{i}=\frac{v_{i}-min_{A}}{max_{A} - min_{A}}(new\_max_{A} - new\_min_{A}) + new\_min_{A}\]
-donde~$v'_i$ ser\'a el nuevo valor del atributo que se esta actualizando;
-~$v_i$ es el valor actual;
-~$min_A$ y ~$max_A$ es el m\'inimo y m\'aximo valor respectivamente de los datos originales;
-~$new\_max_A$ y $new\_min_A$ es el nuevo m\'aximo y m\'inimo valor que puede tomar el atributo $A$.
-
-En este caso se determin\'o que el valor m\'inimo y m\'aximo ser\'a 0 y 1 respectivamente para cada uno de los atributos del $dataset$.
 \section{Red neuronal}
 \subsection{Arquitectura de la red neuronal}
 La red neuronal posee tres capas, una capa de entrada donde se tomar\'an 4 valores, que corresponden a las caracter\'isticas físicas del tama\~no de una flor; una capa intermedia oculta la cual
@@ -60,9 +52,9 @@ De manera aleatoria se escoge  el 80\% del dataset para entrenar la red neuronal
 restante es usado para evaluar los resultados obtenidos una vez hecho el entrenamiento.
 El entrenamiento se realiz\'o con cada uno de los dise\~nos mostrados en las figuras \ref{fig:1hn}, \ref{fig:2hn} y \ref{fig:3hn}.
 Como par\'ametros de entrada para el proceso de entrenamiento se toma el eta o taza de aprendizaje, el n\'umero de \'epocas a alcanzar y la funci\'on de activaci\'on.
-Los pesos al inicio del proceso de entrenamiento son generados de manera aleatoria. Las funciones de activaci\'on disponibles son umbral, identidad, lineal a trozos y la funci\'on sigmoide.
+Los pesos al inicio del proceso de entrenamiento son generados de manera aleatoria. Las funciones de activaci\'on disponibles son umbral, lineal, lineal a trozos y la funci\'on sigmoide.
 \subsubsection{Entrenamiento con una neurona en la capa oculta}
-Con eta=0.2 y hasta alcanzar la \'epoca 50000 se obtuvo un error de 0.201, en la gr\'afica se puede apreciar como la muestra de pruebas no alcanza a llegar al promedio de error que tiene la muestra entrenada.
+Con eta=0.2 y hasta alcanzar la \'epoca 50000 se obtuvo un error de 0.201, en la gráfica se puede apreciar como la muestra de pruebas no alcanza a llegar al promedio de error que tiene la muestra entrenada.
 \begin{figure}[H]
     \includegraphics[width=10cm, height=8cm]{result_1hn}
     \centering
